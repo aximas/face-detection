@@ -7,8 +7,6 @@ Promise.all([
     faceapi.nets.faceExpressionNet.loadFromUri('models'),
 ]).then(startVideo);
 
-
-
 function startVideo() {
     navigator.getUserMedia(
         {video: {}},
@@ -32,7 +30,7 @@ video.addEventListener('play', () => {
         const detections = await faceapi.detectAllFaces(
             video,
             new faceapi.TinyFaceDetectorOptions()).withFaceLandmarks().withFaceExpressions()
-        console.log(detections);
+        // console.log(detections);
 
         const resizeDetections = faceapi.resizeResults(detections, displaySize);
         canvas.getContext('2d').clearRect(0, 0, canvas.width, canvas.height)
