@@ -1,4 +1,5 @@
 const video = document.getElementById('video');
+const wrapper = document.querySelector('.wrapper');
 
 Promise.all([
     faceapi.nets.tinyFaceDetector.loadFromUri('models'),
@@ -17,7 +18,7 @@ function startVideo() {
 
 video.addEventListener('play', () => {
     const canvas = faceapi.createCanvasFromMedia(video);
-    document.body.append(canvas);
+    wrapper.append(canvas);
     
     const displaySize = {
         width: video.width,

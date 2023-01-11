@@ -12,15 +12,17 @@
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-    <video id="video" autoplay muted></video>
+    <div class="wrapper">
+        <video id="video" autoplay muted></video>
+    </div>
 
     <script>
         const screenWidth = window.screen.width;
         const videoElement = document.getElementById('video');
         
         if(screenWidth < 460) {
-            videoElement.width = 360;
-            videoElement.height = 245;
+            videoElement.width = 320;
+            videoElement.height = 220;
         }
         else {
             videoElement.width = 720;
